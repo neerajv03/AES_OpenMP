@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/neeraj/Desktop/aes/AES_OpenMP_Pybind/aes_encryption.cpp
+cstdlib
+-
+iostream
+-
+stdlib.h
+-
+
