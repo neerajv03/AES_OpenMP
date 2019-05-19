@@ -8,4 +8,5 @@ project(aes_test)
 add_executable(
     aes_test
     aes_encryption.cpp
+    constant.hpp
 )
