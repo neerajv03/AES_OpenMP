@@ -6,7 +6,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 project(aes_test)
 
 add_executable(
-    aes_test
+    aes_encryption
     aes_encryption.cpp
     constant.hpp
+    project_utilities.cpp
+    project_utilities.hpp
 )
