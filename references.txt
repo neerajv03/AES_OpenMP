@@ -1,0 +1,43 @@
+AES Concept: 
+    https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
+    https://en.wikipedia.org/wiki/Rijndael_MixColumns#Implementation_example
+
+AES Constants: 
+    SBox & Sox Inverse: https://cryptography.fandom.com/wiki/Rijndael_S-box
+    Rijndael Sbox - https://en.wikipedia.org/wiki/Rijndael_S-box
+    Rijndael MixColumn - https://en.wikipedia.org/wiki/Rijndael_MixColumns
+    Multiplication Constant - https://github.com/franneck94/CUDA-AES/blob/master/AES%20OpenMP/Table.hpp
+
+AES Encryption & Decryption YouTube Videos:
+    https://www.youtube.com/watch?v=K2Xfm0-owS4
+    https://www.youtube.com/watch?v=7uRK9iOk4uk
+    https://www.youtube.com/watch?v=dRYHSf5A4lw&t=1502s
+    https://www.youtube.com/watch?v=bERjYzLqAfw
+    https://www.youtube.com/watch?v=4pmR49izUL0
+
+
+    AES Counter Mode Explanation:
+    https://www.youtube.com/watch?v=6EbyCGrdKh8
+
+    AES Flash Animation:
+    https://www.youtube.com/watch?v=gP4PqVGudtg
+
+
+Code References:
+    https://github.com/franneck94/CUDA-AES
+    https://github.com/allenlee820202/Parallel-AES-Algorithm-using-CUDA
+    https://github.com/vedranMv/cryptoChallenge
+    https://github.com/imagora/openssl_aes_example
+    https://blog.nindalf.com/posts/implementing-aes/
+
+Stack Overflow:
+    https://stackoverflow.com/questions/20056559/parallel-simulation-of-aes-in-c-using-openmp
+    https://crypto.stackexchange.com/questions/2402/how-to-solve-mixcolumns
+    https://crypto.stackexchange.com/questions/48016/how-do-fast-multiplication-algorithms-deal-with-cryptanalysis
+
+Publication:
+    https://www.researchgate.net/publication/265976650_Parallelization_of_the_AES_Algorithm
+    http://www.lnit.org/uploadfile/2013/1025/201310250322
+    https://pdfs.semanticscholar.org/d223/ac8c99338ef031003eb2e7ac6533511bf9e5.pdf
+    http://www.angelfire.com/biz7/atleast/mix_columns.pdf
+    http://async.org.uk/tech-reports/NCL-EECE-MSD-TR-2008-128.pdf

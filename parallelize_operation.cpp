@@ -1,19 +1,4 @@
-#include <vector>
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <random>
-#include <chrono>
-#include <omp.h>
-#include <inttypes.h>
-#include <chrono>
-
 #include "parallelize_operation.hpp"
-#include "project_utilities.hpp"
-#include "aes_class.h"
-
-
-#define KEY_BLOCK 16
 
 using namespace std;
 
