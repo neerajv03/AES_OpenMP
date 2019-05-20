@@ -68,6 +68,14 @@ int main(int argc, char** argv){
     printBigHiphen("Decrypted Message to Byte Array End");
 
     printHiphen();
+
+    bool isEqual = checkByteArray(messageData, decryptedData);
+
+    if(!isEqual)
+        cout << "Message and Decrypted data not matching" << endl;
+    else
+        cout << "Message and Decrypted data macthes" << endl;
+
     testerFunction2();
     return 0;
 }
