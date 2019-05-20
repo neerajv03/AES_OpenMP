@@ -32,6 +32,4 @@ class aes_operation{
     void subBytes(byteArray &message);
     byteArray mulRows(byteArray data);
     byteArray shiftColumn(byteArray data);
-
-
 };

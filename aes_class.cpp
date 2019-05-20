@@ -49,9 +49,11 @@ void aes_operation::keyAddition(byteArray &message, int round){
     xorOperation(message, keys[round], KEY_BLOCK);
 }
 
-
+// Substituing for the components present in sBox Constant
 void aes_operation::subBytes(byteArray &message){
-
+	for (int i = 0; i < message.size(); i++){
+		message[i] = sBox[message[i]];
+	}
 }   
 
 
