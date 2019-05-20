@@ -162,7 +162,6 @@ void testFunction(){
     cout << "Hi you are inside project utilities" << endl;
 }
 
-
 // ---------------------------------------------------------------------//
 bool checkByteArray(vector <byteArray> &message1, vector <byteArray> &message2){
     if(message1.size() != message2.size())
