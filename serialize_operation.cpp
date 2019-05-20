@@ -40,9 +40,7 @@ vector<byteArray> serialize_encryption(vector<byteArray> &plainText, byteArray &
 		auto time = end_time - start_time;
         microseconds += std::chrono::duration_cast<std::chrono::microseconds>(time).count();
 
-		cout << microseconds / (1000.0f * ROUND) << endl;
-	
-
+		cout << "Serialize Encryption Time: " << microseconds / (1000.0f * ROUND) << endl;
 	return encryptedMessage;
 }
 
@@ -64,7 +62,7 @@ vector<byteArray> serialize_decryption(vector<byteArray> &encryptedData, byteArr
         auto time = end_time - start_time;
         microseconds += std::chrono::duration_cast<std::chrono::microseconds>(time).count();
 
-		cout << microseconds / (1000.0f * ROUND) << endl;	
+		cout << "Serialize Decryption Time: " << microseconds / (1000.0f * ROUND) << endl;	
 
     return decryptedMessage;
     
