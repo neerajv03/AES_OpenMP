@@ -13,6 +13,7 @@ CMakeFiles/aes_encryption.dir/aes_encryption.cpp.o
  /home/rohan/Desktop/neeAes/AES_OpenMP_Pybind/counter_mode.hpp
  /home/rohan/Desktop/neeAes/AES_OpenMP_Pybind/parallelize_operation.hpp
  /home/rohan/Desktop/neeAes/AES_OpenMP_Pybind/project_utilities.hpp
+ /home/rohan/Desktop/neeAes/AES_OpenMP_Pybind/serialize_operation.hpp
 CMakeFiles/aes_encryption.dir/counter_mode.cpp.o
  /home/rohan/Desktop/neeAes/AES_OpenMP_Pybind/aes_class.h
  /home/rohan/Desktop/neeAes/AES_OpenMP_Pybind/counter_mode.cpp

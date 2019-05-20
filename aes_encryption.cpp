@@ -8,6 +8,7 @@
 #include "project_utilities.hpp"
 #include "counter_mode.hpp"
 #include "parallelize_operation.hpp"
+#include "serialize_operation.hpp"
 
 #include <string>
 
@@ -32,9 +33,9 @@ int main(int argc, char** argv){
     vector<vector <unsigned char>> messageData = readMessageFile(messageFile);
 
     printBigHiphen("Converting Message to Byte Array Start");
-    for(int i = 0; i < messageData.size(); i++){
-        printByteArray(messageData[i], "Message");
-    }
+    // for(int i = 0; i < messageData.size(); i++){
+    //     printByteArray(messageData[i], "Message");
+    // }
     printBigHiphen("Converting Message to Byte Array End");
 
     vector<unsigned char> randomArray = getRandomByteArray(10);
@@ -53,17 +54,18 @@ int main(int argc, char** argv){
     vector<vector <unsigned char>> encryptedData = parallelize_encryption(messageData, keyData, randomArray, counters);
 
     printBigHiphen("Encrypted Message to Byte Array Start");
-    for(int i = 0; i < encryptedData.size(); i++){
-        printByteArray(encryptedData[i], "Message");
-    }
+    // for(int i = 0; i < encryptedData.size(); i++){
+    //     printByteArray(encryptedData[i], "Message");
+    // }
     printBigHiphen("Encrypted Message to Byte Array End");
 
     vector<vector <unsigned char>> decryptedData = parallelize_decryption(encryptedData, keyData, randomArray, counters);
     printBigHiphen("Decrypted Message to Byte Array Start");
-    for(int i = 0; i < decryptedData.size(); i++){
-        printByteArray(decryptedData[i], "Message");
-    }
+    // for(int i = 0; i < decryptedData.size(); i++){
+    //     printByteArray(decryptedData[i], "Message");
+    // }
     printBigHiphen("Decrypted Message to Byte Array End");
 
+    printHiphen();
     return 0;
 }

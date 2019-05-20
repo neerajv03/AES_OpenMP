@@ -102,6 +102,43 @@ clean: CMakeFiles/aes_encryption.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/aes_encryption_serialize.dir
+
+# All Build rule for target.
+CMakeFiles/aes_encryption_serialize.dir/all:
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/depend
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rohan/Desktop/neeAes/AES_OpenMP_Pybind/CMakeFiles --progress-num=7,8,9,10,11,12 "Built target aes_encryption_serialize"
+.PHONY : CMakeFiles/aes_encryption_serialize.dir/all
+
+# Include target in all.
+all: CMakeFiles/aes_encryption_serialize.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/aes_encryption_serialize.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rohan/Desktop/neeAes/AES_OpenMP_Pybind/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/aes_encryption_serialize.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rohan/Desktop/neeAes/AES_OpenMP_Pybind/CMakeFiles 0
+.PHONY : CMakeFiles/aes_encryption_serialize.dir/rule
+
+# Convenience name for target.
+aes_encryption_serialize: CMakeFiles/aes_encryption_serialize.dir/rule
+
+.PHONY : aes_encryption_serialize
+
+# clean rule for target.
+CMakeFiles/aes_encryption_serialize.dir/clean:
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/clean
+.PHONY : CMakeFiles/aes_encryption_serialize.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/aes_encryption_serialize.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.
