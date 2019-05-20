@@ -62,12 +62,12 @@ const byteArray readKey(const string &fileName){
 
 // ---------------------------------------------------------------------//
 void printByteArray(byteArray &arr, string fileType){
-    // printHiphen();
-    // cout << fileType << ":" << endl;
-	// for (size_t i = 0; i != arr.size(); ++i){
-	// 	cout << hex << (int)arr[i] << "\t";
-	// }
-	// cout << endl << endl;
+    printHiphen();
+    cout << fileType << ":" << endl;
+	for (size_t i = 0; i != arr.size(); ++i){
+		cout << hex << (int)arr[i] << "\t";
+	}
+	cout << endl << endl;
 }
 
 
@@ -160,4 +160,23 @@ void printBigHiphen(string textMessage){
 void testFunction(){
     printHiphen();
     cout << "Hi you are inside project utilities" << endl;
+}
+
+
+// ---------------------------------------------------------------------//
+bool checkByteArray(vector <byteArray> &message1, vector <byteArray> &message2){
+    if(message1.size() != message2.size())
+        return false;
+
+
+    for(int i = 0; i < message1.size();i++){
+        byteArray message_1_i = message1[i];
+        byteArray message_2_i = message1[i];
+
+        for(int j = 0; j < message_1_i.size(); j++){
+        if(message_1_i[j] != message_2_i[j])
+            return false;
+        }
+    }
+    return true;
 }

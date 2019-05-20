@@ -28,3 +28,5 @@ void printHiphen();
 void printByteArray(byteArray &arr, string fileType);
 void printBigHiphen(string textMessage);
 void testFunction();
+
+bool checkByteArray(vector <byteArray> &message1, vector <byteArray> &message2);
