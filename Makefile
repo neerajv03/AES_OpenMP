@@ -150,6 +150,60 @@ aes_encryption.cpp.s:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/aes_encryption.cpp.s
 .PHONY : aes_encryption.cpp.s
 
+counter_mode.o: counter_mode.cpp.o
+
+.PHONY : counter_mode.o
+
+# target to build an object file
+counter_mode.cpp.o:
+	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/counter_mode.cpp.o
+.PHONY : counter_mode.cpp.o
+
+counter_mode.i: counter_mode.cpp.i
+
+.PHONY : counter_mode.i
+
+# target to preprocess a source file
+counter_mode.cpp.i:
+	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/counter_mode.cpp.i
+.PHONY : counter_mode.cpp.i
+
+counter_mode.s: counter_mode.cpp.s
+
+.PHONY : counter_mode.s
+
+# target to generate assembly for a file
+counter_mode.cpp.s:
+	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/counter_mode.cpp.s
+.PHONY : counter_mode.cpp.s
+
+parallelize_operation.o: parallelize_operation.cpp.o
+
+.PHONY : parallelize_operation.o
+
+# target to build an object file
+parallelize_operation.cpp.o:
+	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/parallelize_operation.cpp.o
+.PHONY : parallelize_operation.cpp.o
+
+parallelize_operation.i: parallelize_operation.cpp.i
+
+.PHONY : parallelize_operation.i
+
+# target to preprocess a source file
+parallelize_operation.cpp.i:
+	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/parallelize_operation.cpp.i
+.PHONY : parallelize_operation.cpp.i
+
+parallelize_operation.s: parallelize_operation.cpp.s
+
+.PHONY : parallelize_operation.s
+
+# target to generate assembly for a file
+parallelize_operation.cpp.s:
+	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/parallelize_operation.cpp.s
+.PHONY : parallelize_operation.cpp.s
+
 project_utilities.o: project_utilities.cpp.o
 
 .PHONY : project_utilities.o
@@ -189,6 +243,12 @@ help:
 	@echo "... aes_encryption.o"
 	@echo "... aes_encryption.i"
 	@echo "... aes_encryption.s"
+	@echo "... counter_mode.o"
+	@echo "... counter_mode.i"
+	@echo "... counter_mode.s"
+	@echo "... parallelize_operation.o"
+	@echo "... parallelize_operation.i"
+	@echo "... parallelize_operation.s"
 	@echo "... project_utilities.o"
 	@echo "... project_utilities.i"
 	@echo "... project_utilities.s"

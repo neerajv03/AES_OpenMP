@@ -61,7 +61,7 @@ const ByteArray readKey(const string &fileName){
 // ---------------------------------------------------------------------//
 void printByteArray(ByteArray &arr, string fileType){
     printHiphen();
-    cout << fileType << ": File" << endl;
+    cout << fileType << ":" << endl;
 	for (size_t i = 0; i != arr.size(); ++i){
 		cout << hex << (int)arr[i] << "\t";
 	}
@@ -74,7 +74,6 @@ bool checkArgumentParser(int argsLength, char** argument, string &outputFile, st
         if(argsLength != 7){
             printHiphen();
             cout << "Argument Length value is: " << argsLength << endl;
-            cout << "Please enter 2 fprintByteArrayile Names" << endl;
             cout << "Run In the below format." << endl;
             cout << "./aes_encruption -m message_file.txt -k key_file.txt -o output.txt" << endl;
             return false;
@@ -110,17 +109,40 @@ bool checkArgumentParser(int argsLength, char** argument, string &outputFile, st
     return true;
 }
 
-void printBigHiphen(){
-    cout << "-------------------------------------------------------------------------------" << endl;
 
+//---------------------------------------------------------------------//
+const ByteArray getRandomByteArray(const unsigned int &length){
+    // Random Byte Array Nounce added for counter.
+    ByteArray randomArray(length);
+    size_t i = 0;
+
+	random_device rd;
+	mt19937 generator(rd());
+	uniform_int_distribution<int> distribution(0, 16);
+
+	for (i; i != randomArray.size(); ++i){
+		randomArray[i] = (unsigned char)distribution(generator);
+	}
+	return randomArray;
 }
 
+
+// ---------------------------------------------------------------------//
+void xorOperation(ByteArray &message, ByteArray &key, int length){
+    for(int i = 0; i < length; i++){
+        message[i] ^= key[i];
+    }   
+}
 
 // ---------------------------------------------------------------------//
 void printHiphen(){
     cout << "----------------------------------------" << endl;
 }
 
+// ---------------------------------------------------------------------//
+void printBigHiphen(string textMessage){
+    cout << "------------------" << textMessage << "------------------" << endl;
+}
 
 // ---------------------------------------------------------------------//
 void testFunction(){
