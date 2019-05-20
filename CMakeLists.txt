@@ -6,7 +6,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fopenmp")
 project(aes_parallel_serial)
 
 add_executable(
-    aes_encryption
+    aes_encryption_parallelize
     aes_encryption_parallelize.cpp
     constant.hpp
     project_utilities.cpp

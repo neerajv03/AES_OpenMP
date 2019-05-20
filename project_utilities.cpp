@@ -62,12 +62,12 @@ const byteArray readKey(const string &fileName){
 
 // ---------------------------------------------------------------------//
 void printByteArray(byteArray &arr, string fileType){
-    printHiphen();
-    cout << fileType << ":" << endl;
-	for (size_t i = 0; i != arr.size(); ++i){
-		cout << hex << (int)arr[i] << "\t";
-	}
-	cout << endl << endl;
+    // printHiphen();
+    // cout << fileType << ":" << endl;
+	// for (size_t i = 0; i != arr.size(); ++i){
+	// 	cout << hex << (int)arr[i] << "\t";
+	// }
+	// cout << endl << endl;
 }
 
 
