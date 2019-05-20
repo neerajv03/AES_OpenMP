@@ -26,3 +26,6 @@ void printBigHiphen(string textMessage);
 void testFunction();
 
 void xorOperation(byteArray &message, byteArray &key, int length);
+
+byteArray xorOp2(byteArray &message1, byteArray &message2);
+

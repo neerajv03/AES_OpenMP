@@ -134,6 +134,15 @@ void xorOperation(byteArray &message, byteArray &key, int length){
     }   
 }
 
+
+byteArray xorOp2(byteArray &message1, byteArray &message2){
+    byteArray res(message1.size(), 0x00);
+    for (int i = 0; i != message1.size(); ++i){
+        res[i] = message1[i] ^ message2[i];
+    }
+    return res;
+}
+
 // ---------------------------------------------------------------------//
 void printHiphen(){
     cout << "----------------------------------------" << endl;
