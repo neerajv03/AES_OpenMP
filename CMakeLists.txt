@@ -11,4 +11,8 @@ add_executable(
     constant.hpp
     project_utilities.cpp
     project_utilities.hpp
+    counter_mode.cpp
+    counter_mode.hpp
+    parallelize_operation.cpp
+    parallelize_operation.hpp
 )

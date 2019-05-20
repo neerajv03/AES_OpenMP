@@ -6,6 +6,7 @@
 
 #include "constant.hpp"
 #include "project_utilities.hpp"
+#include "counter_mode.hpp"
 
 #include <string>
 
@@ -29,11 +30,24 @@ int main(int argc, char** argv){
 
     vector<vector <unsigned char>> messageData = readMessageFile(messageFile);
 
-    printBigHiphen();
+    printBigHiphen("Converting Message to Byte Array Start");
     for(int i = 0; i < messageData.size(); i++){
         printByteArray(messageData[i], "Message");
     }
-    printBigHiphen();
+    printBigHiphen("Converting Message to Byte Array End");
+
+    vector<unsigned char> randomArray = getRandomByteArray(10);
+    printByteArray(randomArray, "IV Array");
+
+
+    vector<vector <unsigned char>> counters(messageData.size(), vector<unsigned char> (KEY_BLOCK, 0x00));
+
+    generateCounter(counters, randomArray);
+    printBigHiphen("Random Nounce Calculation Start: ");
+    for(int i = 0; i < counters.size(); i++){
+        printByteArray(counters[i], "Counter");
+    }
+    printBigHiphen("Random Nounce Calculation End: ");
 
     return 0;
 }

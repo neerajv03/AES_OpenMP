@@ -17,8 +17,13 @@ void printByteArray(ByteArray &arr, string fileType);
 
 bool checkArgumentParser(int argsLength, char** argument, string &outputFile, string &messageFile, string &keyFile);
 
+const ByteArray getRandomByteArray(const unsigned int &length);
+
+
 void printHiphen();
 
-void printBigHiphen();
+void printBigHiphen(string textMessage);
 
 void testFunction();
+
+void xorOperation(ByteArray &message, ByteArray &key, int length);
