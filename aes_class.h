@@ -29,9 +29,11 @@ class aes_operation  {
     void keySchedule();
     void keyAddition(byteArray &message, int round);
     void subBytes(byteArray &message);
+    void subBytesInv(byteArray &encryptedMessage);
     void shiftRows(byteArray &message);
+    void shiftRowsInvert(byteArray &encryptedMessage);
     void mixColumns(byteArray &message);
-
+    void mixColumnsInvert(byteArray &encryptedMessage);
     byteArray computeSubKeys(byteArray &prev_subkey, const int &round);
 
 };

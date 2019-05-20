@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 aes_operation::aes_operation(byteArray passedKey) : keys(SUBKEYS){
 	key = passedKey;
 	printByteArray(key, "Key Test");
@@ -28,7 +27,6 @@ byteArray aes_operation::aesEncrypt(byteArray messageData, byteArray key){
 		keyAddition(message, round);
 	}
 
-	// Last round without Mix-Column (RNUM_ROUNDS)
 	round = 10;
 	subBytes(message);
 	shiftRows(message);
@@ -39,7 +37,27 @@ byteArray aes_operation::aesEncrypt(byteArray messageData, byteArray key){
 
 
 byteArray aes_operation::aesDecrypt(byteArray encryptedData, byteArray key){
-    return encryptedData;
+	
+	int i = 0, round = ROUND;
+	byteArray decryptedData = encryptedData;
+
+	keyAddition(decryptedData, round);
+	shiftRowsInvert(decryptedData);
+	subBytesInv(decryptedData);
+	round = ROUND - 1;
+
+	for (round; round > 0; --round){
+		keyAddition(decryptedData, round);
+		mixColumnsInvert(decryptedData);
+		shiftRowsInvert(decryptedData);
+		subBytesInv(decryptedData);
+	}
+
+	// Last round without Mix-Column (Inverse R0)
+	round = 0;
+	keyAddition(decryptedData, round);
+
+	return decryptedData;
 }
 
 
@@ -55,7 +73,14 @@ void aes_operation::subBytes(byteArray &message){
 	for (int i = 0; i < KEY_BLOCK; i++){
 		message[i] = sBox[message[i]];
 	}
-}   
+}
+
+void aes_operation::subBytesInv(byteArray &encryptedMessage){
+	//printBigHiphen("Inverse Sub Bytes");
+	for(int i = 0; i < KEY_BLOCK; i++){
+		encryptedMessage[i] = sBoxInverse[encryptedMessage[i]];
+	}
+}
 
 
 void aes_operation::shiftRows(byteArray &message){
@@ -86,6 +111,32 @@ void aes_operation::shiftRows(byteArray &message){
 }
 
 
+void aes_operation::shiftRowsInvert(byteArray &encryptedMessage){
+	byteArray tmp(KEY_BLOCK);
+
+	tmp[0] = encryptedMessage[0];
+	tmp[1] = encryptedMessage[13];
+	tmp[2] = encryptedMessage[10];
+	tmp[3] = encryptedMessage[7];
+
+	tmp[4] = encryptedMessage[4];
+	tmp[5] = encryptedMessage[1];
+	tmp[6] = encryptedMessage[14];
+	tmp[7] = encryptedMessage[11];
+
+	tmp[8] = encryptedMessage[8];
+	tmp[9] = encryptedMessage[5];
+	tmp[10] = encryptedMessage[2];
+	tmp[11] = encryptedMessage[15];
+
+	tmp[12] = encryptedMessage[12];
+	tmp[13] = encryptedMessage[9];
+	tmp[14] = encryptedMessage[6];
+	tmp[15] = encryptedMessage[3];
+
+	encryptedMessage = tmp;
+}
+
 void aes_operation::mixColumns(byteArray &message){
 	//printBigHiphen("Mix Columns");
 	unsigned char b0, b1, b2, b3;
@@ -103,6 +154,25 @@ void aes_operation::mixColumns(byteArray &message){
 	}
 }
 
+
+void aes_operation::mixColumnsInvert(byteArray &encryptedMessage){
+	unsigned char c0, c1, c2, c3;
+	int i;
+
+	for (i = 0; i < KEY_BLOCK; i += 4)
+	{
+		c0 = encryptedMessage[i + 0];
+		c1 = encryptedMessage[i + 1];
+		c2 = encryptedMessage[i + 2];
+		c3 = encryptedMessage[i + 3];
+
+		// Mix-Col Inverse Matrix * c vector
+		encryptedMessage[i + 0] = mul[c0][5] ^ mul[c1][3] ^ mul[c2][4] ^ mul[c3][2];
+		encryptedMessage[i + 1] = mul[c0][2] ^ mul[c1][5] ^ mul[c2][3] ^ mul[c3][4];
+		encryptedMessage[i + 2] = mul[c0][4] ^ mul[c1][2] ^ mul[c2][5] ^ mul[c3][3];
+		encryptedMessage[i + 3] = mul[c0][3] ^ mul[c1][4] ^ mul[c2][2] ^ mul[c3][5];
+	}
+}
 
 void aes_operation::keySchedule(){
 	//printBigHiphen("Key Schedule");

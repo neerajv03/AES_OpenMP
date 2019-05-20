@@ -38,17 +38,17 @@ int main(int argc, char** argv){
     printBigHiphen("Converting Message to Byte Array End");
 
     vector<unsigned char> randomArray = getRandomByteArray(10);
-    printByteArray(randomArray, "IV Array");
+    //printByteArray(randomArray, "IV Array");
 
 
     vector<vector <unsigned char>> counters(messageData.size(), vector<unsigned char> (KEY_BLOCK, 0x00));
 
     generateCounter(counters, randomArray);
-    printBigHiphen("Random Nounce Calculation Start: ");
-    for(int i = 0; i < counters.size(); i++){
-        printByteArray(counters[i], "Counter");
-    }
-    printBigHiphen("Random Nounce Calculation End: ");
+    // printBigHiphen("Random Nounce Calculation Start: ");
+    // for(int i = 0; i < counters.size(); i++){
+    //     printByteArray(counters[i], "Counter");
+    // }
+    // printBigHiphen("Random Nounce Calculation End: ");
 
     vector<vector <unsigned char>> encryptedData = parallelize_encryption(messageData, keyData, randomArray, counters);
 
@@ -58,7 +58,12 @@ int main(int argc, char** argv){
     }
     printBigHiphen("Encrypted Message to Byte Array End");
 
-    testerFunction2();
+    vector<vector <unsigned char>> decryptedData = parallelize_decryption(encryptedData, keyData, randomArray, counters);
+    printBigHiphen("Decrypted Message to Byte Array Start");
+    for(int i = 0; i < decryptedData.size(); i++){
+        printByteArray(decryptedData[i], "Message");
+    }
+    printBigHiphen("Decrypted Message to Byte Array End");
 
     return 0;
 }

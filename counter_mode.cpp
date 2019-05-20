@@ -9,11 +9,7 @@
 
 #include "counter_mode.hpp"
 
-using std::cout;
-using std::endl;
-using std::vector;
-using std::string;
-using std::ifstream;
+using namespace std;
 
 
 byteArray incrmentCounter(const byteArray &start_counter, const unsigned int &round){
