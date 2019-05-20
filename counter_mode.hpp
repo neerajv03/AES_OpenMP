@@ -1,17 +1,14 @@
-#pragma once
-
-
 
 #include <vector>
 #include <string>
 #include <iostream>
 
 #include "project_utilities.hpp"
-#include "aes_class.hpp"
+#include "aes_class.h"
 using namespace std;
 
 
-ByteArray incrmentCounter(const ByteArray &start_counter, const unsigned int &round);
+byteArray incrmentCounter(const byteArray &start_counter, const unsigned int &round);
 
 
-void generateCounter(vector<ByteArray> &ctrs, const ByteArray &IV);
+void generateCounter(vector<byteArray> &ctrs, const byteArray &IV);

@@ -16,11 +16,11 @@ using std::string;
 using std::ifstream;
 
 
-ByteArray incrmentCounter(const ByteArray &start_counter, const unsigned int &round){
+byteArray incrmentCounter(const byteArray &start_counter, const unsigned int &round){
 
   int64_t ctr_converted = 0x00;
   unsigned int ctr_size = start_counter.size();
-  ByteArray result(ctr_size, 0x00);
+  byteArray result(ctr_size, 0x00);
 
   for (unsigned int i = 0; i<ctr_size; ++i) 
     ctr_converted += (int64_t)(start_counter[start_counter.size()-i-1]) << 8*i   & (int64_t)0xFF<<8*i;
@@ -34,10 +34,10 @@ ByteArray incrmentCounter(const ByteArray &start_counter, const unsigned int &ro
   return result;
 }
 
-void generateCounter(vector<ByteArray> &ctrs, const ByteArray &IV){
-	ByteArray start(KEY_BLOCK - IV.size(), 0x00);
-	ByteArray ctrI(KEY_BLOCK - IV.size(), 0x00);
-	ByteArray res(KEY_BLOCK, 0x00);
+void generateCounter(vector<byteArray> &ctrs, const byteArray &IV){
+	byteArray start(KEY_BLOCK - IV.size(), 0x00);
+	byteArray ctrI(KEY_BLOCK - IV.size(), 0x00);
+	byteArray res(KEY_BLOCK, 0x00);
 	
 	for (size_t i = 0; i < ctrs.size(); ++i){	       
 		res = IV;

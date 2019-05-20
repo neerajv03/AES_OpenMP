@@ -123,6 +123,33 @@ aes_encryption/fast:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/build
 .PHONY : aes_encryption/fast
 
+aes_class.o: aes_class.cpp.o
+
+.PHONY : aes_class.o
+
+# target to build an object file
+aes_class.cpp.o:
+	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/aes_class.cpp.o
+.PHONY : aes_class.cpp.o
+
+aes_class.i: aes_class.cpp.i
+
+.PHONY : aes_class.i
+
+# target to preprocess a source file
+aes_class.cpp.i:
+	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/aes_class.cpp.i
+.PHONY : aes_class.cpp.i
+
+aes_class.s: aes_class.cpp.s
+
+.PHONY : aes_class.s
+
+# target to generate assembly for a file
+aes_class.cpp.s:
+	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/aes_class.cpp.s
+.PHONY : aes_class.cpp.s
+
 aes_encryption.o: aes_encryption.cpp.o
 
 .PHONY : aes_encryption.o
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... aes_encryption"
 	@echo "... edit_cache"
+	@echo "... aes_class.o"
+	@echo "... aes_class.i"
+	@echo "... aes_class.s"
 	@echo "... aes_encryption.o"
 	@echo "... aes_encryption.i"
 	@echo "... aes_encryption.s"

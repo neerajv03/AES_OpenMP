@@ -11,11 +11,11 @@
 using namespace std;
 
 // ---------------------------------------------------------------------//
-const vector<ByteArray> readMessageFile(const string &fileName){
-	vector<ByteArray> data;
+const vector<byteArray> readMessageFile(const string &fileName){
+	vector<byteArray> data;
 	char act_char;
 	unsigned int counter = 0;
-	ByteArray next_byte_array;
+	byteArray next_byte_array;
 	ifstream infile;
 
 	infile.open(fileName);
@@ -39,8 +39,8 @@ const vector<ByteArray> readMessageFile(const string &fileName){
 
 
 // ---------------------------------------------------------------------//
-const ByteArray readKey(const string &fileName){
-	ByteArray data;
+const byteArray readKey(const string &fileName){
+	byteArray data;
 	char act_char;
 	unsigned int counter = 0;
 	ifstream infile;
@@ -59,7 +59,7 @@ const ByteArray readKey(const string &fileName){
 
 
 // ---------------------------------------------------------------------//
-void printByteArray(ByteArray &arr, string fileType){
+void printByteArray(byteArray &arr, string fileType){
     printHiphen();
     cout << fileType << ":" << endl;
 	for (size_t i = 0; i != arr.size(); ++i){
@@ -111,9 +111,9 @@ bool checkArgumentParser(int argsLength, char** argument, string &outputFile, st
 
 
 //---------------------------------------------------------------------//
-const ByteArray getRandomByteArray(const unsigned int &length){
+const byteArray getRandomByteArray(const unsigned int &length){
     // Random Byte Array Nounce added for counter.
-    ByteArray randomArray(length);
+    byteArray randomArray(length);
     size_t i = 0;
 
 	random_device rd;
@@ -128,7 +128,7 @@ const ByteArray getRandomByteArray(const unsigned int &length){
 
 
 // ---------------------------------------------------------------------//
-void xorOperation(ByteArray &message, ByteArray &key, int length){
+void xorOperation(byteArray &message, byteArray &key, int length){
     for(int i = 0; i < length; i++){
         message[i] ^= key[i];
     }   
