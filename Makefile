@@ -123,6 +123,19 @@ aes_encryption/fast:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/build
 .PHONY : aes_encryption/fast
 
+#=============================================================================
+# Target rules for targets named aes_encryption_serialize
+
+# Build rule for target.
+aes_encryption_serialize: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aes_encryption_serialize
+.PHONY : aes_encryption_serialize
+
+# fast build rule for target.
+aes_encryption_serialize/fast:
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/build
+.PHONY : aes_encryption_serialize/fast
+
 aes_class.o: aes_class.cpp.o
 
 .PHONY : aes_class.o
@@ -130,6 +143,7 @@ aes_class.o: aes_class.cpp.o
 # target to build an object file
 aes_class.cpp.o:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/aes_class.cpp.o
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/aes_class.cpp.o
 .PHONY : aes_class.cpp.o
 
 aes_class.i: aes_class.cpp.i
@@ -139,6 +153,7 @@ aes_class.i: aes_class.cpp.i
 # target to preprocess a source file
 aes_class.cpp.i:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/aes_class.cpp.i
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/aes_class.cpp.i
 .PHONY : aes_class.cpp.i
 
 aes_class.s: aes_class.cpp.s
@@ -148,6 +163,7 @@ aes_class.s: aes_class.cpp.s
 # target to generate assembly for a file
 aes_class.cpp.s:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/aes_class.cpp.s
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/aes_class.cpp.s
 .PHONY : aes_class.cpp.s
 
 aes_encryption.o: aes_encryption.cpp.o
@@ -177,6 +193,33 @@ aes_encryption.cpp.s:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/aes_encryption.cpp.s
 .PHONY : aes_encryption.cpp.s
 
+aes_encryption_serialize.o: aes_encryption_serialize.cpp.o
+
+.PHONY : aes_encryption_serialize.o
+
+# target to build an object file
+aes_encryption_serialize.cpp.o:
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/aes_encryption_serialize.cpp.o
+.PHONY : aes_encryption_serialize.cpp.o
+
+aes_encryption_serialize.i: aes_encryption_serialize.cpp.i
+
+.PHONY : aes_encryption_serialize.i
+
+# target to preprocess a source file
+aes_encryption_serialize.cpp.i:
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/aes_encryption_serialize.cpp.i
+.PHONY : aes_encryption_serialize.cpp.i
+
+aes_encryption_serialize.s: aes_encryption_serialize.cpp.s
+
+.PHONY : aes_encryption_serialize.s
+
+# target to generate assembly for a file
+aes_encryption_serialize.cpp.s:
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/aes_encryption_serialize.cpp.s
+.PHONY : aes_encryption_serialize.cpp.s
+
 counter_mode.o: counter_mode.cpp.o
 
 .PHONY : counter_mode.o
@@ -184,6 +227,7 @@ counter_mode.o: counter_mode.cpp.o
 # target to build an object file
 counter_mode.cpp.o:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/counter_mode.cpp.o
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/counter_mode.cpp.o
 .PHONY : counter_mode.cpp.o
 
 counter_mode.i: counter_mode.cpp.i
@@ -193,6 +237,7 @@ counter_mode.i: counter_mode.cpp.i
 # target to preprocess a source file
 counter_mode.cpp.i:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/counter_mode.cpp.i
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/counter_mode.cpp.i
 .PHONY : counter_mode.cpp.i
 
 counter_mode.s: counter_mode.cpp.s
@@ -202,6 +247,7 @@ counter_mode.s: counter_mode.cpp.s
 # target to generate assembly for a file
 counter_mode.cpp.s:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/counter_mode.cpp.s
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/counter_mode.cpp.s
 .PHONY : counter_mode.cpp.s
 
 parallelize_operation.o: parallelize_operation.cpp.o
@@ -238,6 +284,7 @@ project_utilities.o: project_utilities.cpp.o
 # target to build an object file
 project_utilities.cpp.o:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/project_utilities.cpp.o
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/project_utilities.cpp.o
 .PHONY : project_utilities.cpp.o
 
 project_utilities.i: project_utilities.cpp.i
@@ -247,6 +294,7 @@ project_utilities.i: project_utilities.cpp.i
 # target to preprocess a source file
 project_utilities.cpp.i:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/project_utilities.cpp.i
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/project_utilities.cpp.i
 .PHONY : project_utilities.cpp.i
 
 project_utilities.s: project_utilities.cpp.s
@@ -256,7 +304,35 @@ project_utilities.s: project_utilities.cpp.s
 # target to generate assembly for a file
 project_utilities.cpp.s:
 	$(MAKE) -f CMakeFiles/aes_encryption.dir/build.make CMakeFiles/aes_encryption.dir/project_utilities.cpp.s
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/project_utilities.cpp.s
 .PHONY : project_utilities.cpp.s
+
+serialize_operation.o: serialize_operation.cpp.o
+
+.PHONY : serialize_operation.o
+
+# target to build an object file
+serialize_operation.cpp.o:
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/serialize_operation.cpp.o
+.PHONY : serialize_operation.cpp.o
+
+serialize_operation.i: serialize_operation.cpp.i
+
+.PHONY : serialize_operation.i
+
+# target to preprocess a source file
+serialize_operation.cpp.i:
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/serialize_operation.cpp.i
+.PHONY : serialize_operation.cpp.i
+
+serialize_operation.s: serialize_operation.cpp.s
+
+.PHONY : serialize_operation.s
+
+# target to generate assembly for a file
+serialize_operation.cpp.s:
+	$(MAKE) -f CMakeFiles/aes_encryption_serialize.dir/build.make CMakeFiles/aes_encryption_serialize.dir/serialize_operation.cpp.s
+.PHONY : serialize_operation.cpp.s
 
 # Help Target
 help:
@@ -265,14 +341,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... aes_encryption"
 	@echo "... edit_cache"
+	@echo "... aes_encryption"
+	@echo "... aes_encryption_serialize"
 	@echo "... aes_class.o"
 	@echo "... aes_class.i"
 	@echo "... aes_class.s"
 	@echo "... aes_encryption.o"
 	@echo "... aes_encryption.i"
 	@echo "... aes_encryption.s"
+	@echo "... aes_encryption_serialize.o"
+	@echo "... aes_encryption_serialize.i"
+	@echo "... aes_encryption_serialize.s"
 	@echo "... counter_mode.o"
 	@echo "... counter_mode.i"
 	@echo "... counter_mode.s"
@@ -282,6 +362,9 @@ help:
 	@echo "... project_utilities.o"
 	@echo "... project_utilities.i"
 	@echo "... project_utilities.s"
+	@echo "... serialize_operation.o"
+	@echo "... serialize_operation.i"
+	@echo "... serialize_operation.s"
 .PHONY : help
 
 

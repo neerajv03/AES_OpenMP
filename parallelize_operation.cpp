@@ -24,14 +24,14 @@ vector<byteArray> parallelize_encryption(vector<byteArray> &plainText, byteArray
     vector<byteArray> encryptedMessage(plainText.size(), vector<unsigned char>(KEY_BLOCK, 0x00));
 
     float microseconds = 0.0f;
-
+	int pragmaPrivate = 0;
 	for (int t = 2; t != THREAD_COUNT; t += 2){
 		cout << endl << "OpenMP (" << t << " Threads) - Encrypted Duration  ";
 
 		for (int r = 0; r != ROUND; ++r){
 			auto start_time = std::chrono::high_resolution_clock::now();
 			
-			#pragma omp parallel private(i) shared(aesObject, encryptedMessage, counter, plainText) num_threads(t)
+			#pragma omp parallel private(pragmaPrivate) shared(aesObject, encryptedMessage, counter, plainText) num_threads(t)
             {
 				#pragma omp for 
 				for (int i = 0; i < plainText.size(); ++i){
@@ -56,7 +56,7 @@ vector<byteArray> parallelize_encryption(vector<byteArray> &plainText, byteArray
 
 vector<byteArray> parallelize_decryption(vector<byteArray> &encryptedData, byteArray &key, byteArray &randomArray, vector<byteArray> &counter){
     aes_operation aesObject(key);
-
+	int pragmaPrivate = 0;
     vector<byteArray> decryptedMessage(encryptedData.size(), vector<unsigned char>(KEY_BLOCK, 0x00));
     float microseconds = 0.0f;
 
@@ -66,7 +66,7 @@ vector<byteArray> parallelize_decryption(vector<byteArray> &encryptedData, byteA
 		for (int r = 0; r != ROUND; ++r){
 			auto start_time = std::chrono::high_resolution_clock::now();
 			
-			#pragma omp parallel private(i) shared(aesObject, decryptedMessage, counter, encryptedData) num_threads(t)
+			#pragma omp parallel private(pragmaPrivate) shared(aesObject, decryptedMessage, counter, encryptedData) num_threads(t)
             {
 				#pragma omp for 
 				for (int i = 0; i < encryptedData.size(); ++i){
