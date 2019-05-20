@@ -25,8 +25,7 @@ vector<byteArray> parallelize_encryption(vector<byteArray> &plainText, byteArray
 
     float microseconds = 0.0f;
 	int pragmaPrivate = 0;
-	for (int t = 2; t != THREAD_COUNT; t += 2){
-		cout << endl << "OpenMP (" << t << " Threads) - Encrypted Duration  ";
+	for (int t = 2; t <= THREAD_COUNT; t += 2){
 
 		for (int r = 0; r != ROUND; ++r){
 			auto start_time = std::chrono::high_resolution_clock::now();
@@ -47,7 +46,7 @@ vector<byteArray> parallelize_encryption(vector<byteArray> &plainText, byteArray
 			microseconds += std::chrono::duration_cast<std::chrono::microseconds>(time).count();
 		}
 
-		cout << microseconds / (1000.0f * ROUND) << endl;
+		cout << t << " Threads - Encrypted Duration: " << microseconds / (1000.0f * ROUND) << endl;
 		microseconds = 0.0f;
 	}
 
@@ -60,9 +59,7 @@ vector<byteArray> parallelize_decryption(vector<byteArray> &encryptedData, byteA
     vector<byteArray> decryptedMessage(encryptedData.size(), vector<unsigned char>(KEY_BLOCK, 0x00));
     float microseconds = 0.0f;
 
-	for (int t = 2; t != THREAD_COUNT; t += 2){
-		cout << endl << "OpenMP (" << t << " Threads) - Encrypted Duration  ";
-
+	for (int t = 2; t <= THREAD_COUNT; t += 2){
 		for (int r = 0; r != ROUND; ++r){
 			auto start_time = std::chrono::high_resolution_clock::now();
 			
@@ -74,7 +71,6 @@ vector<byteArray> parallelize_decryption(vector<byteArray> &encryptedData, byteA
 					temp = xorOp2(temp, encryptedData[i]);
                     decryptedMessage[i] = temp;
 				}
-
 			}
 
 			auto end_time = std::chrono::high_resolution_clock::now();
@@ -82,12 +78,11 @@ vector<byteArray> parallelize_decryption(vector<byteArray> &encryptedData, byteA
 			microseconds += std::chrono::duration_cast<std::chrono::microseconds>(time).count();
 		}
 
-		cout << microseconds / (1000.0f * ROUND) << endl;
+		cout << t << " Threads - Encrypted Duration: " <<  microseconds / (1000.0f * ROUND) << endl;
 		microseconds = 0.0f;
 	}
 
     return decryptedMessage;
-    
 }
 
 void testerFunction2(){

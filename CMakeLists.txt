@@ -7,7 +7,7 @@ project(aes_parallel_serial)
 
 add_executable(
     aes_encryption
-    aes_encryption.cpp
+    aes_encryption_parallelize.cpp
     constant.hpp
     project_utilities.cpp
     project_utilities.hpp

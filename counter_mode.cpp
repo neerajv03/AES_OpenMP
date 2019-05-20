@@ -1,16 +1,7 @@
-#include <vector>
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <random>
-#include <chrono>
-#include <omp.h>
 #include <inttypes.h>
-
 #include "counter_mode.hpp"
 
 using namespace std;
-
 
 byteArray incrmentCounter(const byteArray &start_counter, const unsigned int &round){
 
@@ -23,10 +14,9 @@ byteArray incrmentCounter(const byteArray &start_counter, const unsigned int &ro
   
   ctr_converted = ctr_converted + (uint64_t)round;
   
-  for (unsigned int i = 0; i<ctr_size; ++i) {
+  for (unsigned int i = 0; i<ctr_size; ++i)
     result[i] += (ctr_converted >> (ctr_size-1-i)*8) & (int64_t)0xFF;
-  }
-
+  
   return result;
 }
 

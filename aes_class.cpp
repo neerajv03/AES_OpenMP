@@ -6,9 +6,8 @@ using namespace std;
 
 aes_operation::aes_operation(byteArray passedKey) : keys(SUBKEYS){
 	key = passedKey;
-	printByteArray(key, "Key Test");
-    printHiphen();
-    cout << "AES Object Created" << endl;
+	// printByteArray(key, "Key Test");
+    // printHiphen();
 	keySchedule();
 }
 
