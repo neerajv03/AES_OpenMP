@@ -7,6 +7,7 @@
 #include "constant.hpp"
 #include "project_utilities.hpp"
 #include "counter_mode.hpp"
+#include "parallelize_operation.hpp"
 
 #include <string>
 
@@ -48,6 +49,16 @@ int main(int argc, char** argv){
         printByteArray(counters[i], "Counter");
     }
     printBigHiphen("Random Nounce Calculation End: ");
+
+    vector<vector <unsigned char>> encryptedData = parallelize_encryption(messageData, keyData, randomArray, counters);
+
+    printBigHiphen("Encrypted Message to Byte Array Start");
+    for(int i = 0; i < encryptedData.size(); i++){
+        printByteArray(encryptedData[i], "Message");
+    }
+    printBigHiphen("Encrypted Message to Byte Array End");
+
+    testerFunction2();
 
     return 0;
 }

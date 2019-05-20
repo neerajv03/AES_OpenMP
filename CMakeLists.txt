@@ -15,4 +15,6 @@ add_executable(
     counter_mode.hpp
     parallelize_operation.cpp
     parallelize_operation.hpp
+    aes_class.cpp
+    aes_class.h
 )

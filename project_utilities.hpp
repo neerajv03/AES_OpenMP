@@ -1,4 +1,3 @@
-#pragma once
 
 #include <vector>
 #include <iostream>
@@ -7,17 +6,17 @@
 #define KEY_BLOCK 16
 
 using namespace std;
-typedef vector<unsigned char> ByteArray;
+typedef vector<unsigned char> byteArray;
 
-const vector<ByteArray> readMessageFile(const string &fileName);
+const vector<byteArray> readMessageFile(const string &fileName);
 
-const ByteArray readKey(const string &fileName);
+const byteArray readKey(const string &fileName);
 
-void printByteArray(ByteArray &arr, string fileType);
+void printByteArray(byteArray &arr, string fileType);
 
 bool checkArgumentParser(int argsLength, char** argument, string &outputFile, string &messageFile, string &keyFile);
 
-const ByteArray getRandomByteArray(const unsigned int &length);
+const byteArray getRandomByteArray(const unsigned int &length);
 
 
 void printHiphen();
@@ -26,4 +25,4 @@ void printBigHiphen(string textMessage);
 
 void testFunction();
 
-void xorOperation(ByteArray &message, ByteArray &key, int length);
+void xorOperation(byteArray &message, byteArray &key, int length);
